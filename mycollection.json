@@ -1,0 +1,57 @@
+[
+    {
+        "index": 1,
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2022,
+        "color": "black",
+        "bodystyle": "Sedan",
+        "transmission": "Automatic",
+        "type": "AWD",
+        "img":"https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
+    },
+    {
+        "index": 2,
+        "make": "Lucid Air",
+        "model": "mnm",
+        "year": 2022,
+        "color": "Silver",
+        "bodystyle": "Sedan",
+        "transmission": "Manual",
+        "type": "AWD",
+        "img":"https://mclaren.scene7.com/is/image/mclaren/DSC00052_6:crop-1x1?wid=1200&hei=1200"
+    },
+    {
+        "index": 3,
+        "make": "BMW",
+        "model": "M5",
+        "year": 2022,
+        "color": "black",
+        "bodystyle": "",
+        "transmission": "",
+        "type": "AWD",
+        "img":"https://carinsurance.ae/wp-content/uploads/First-UAE-supercar-manufacturing-plant-to-open-in-Dubai.jpg"
+    },
+    {
+        "index": 4,
+        "make": "Volkswagen",
+        "model": "Beetle",
+        "year": 1980,
+        "color": "Orange",
+        "bodystyle": "Sedan",
+        "transmission": "",
+        "type": "RWD",
+        "img":"https://www.goauto.com.au/images/93bca07ce0aa114144661581531f8df7b5b13183.jpg"
+    },
+    {
+        "index": 5,
+        "make": "Honda",
+        "model": "CRV",
+        "year": 2022,
+        "color": "black",
+        "bodystyle": "",
+        "transmission": "",
+        "type": "FWD",
+        "img":"https://www.j-14.com/wp-content/uploads/2017/06/cars3.jpg?fit=800%2C450&quality=86&strip=all"
+    }
+]

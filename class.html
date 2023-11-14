@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Morgage Calculator</title>
+        <style>
+            input{
+                margin:1rem 0;
+                width: 300px;
+            }
+            input:invalid + span::after{
+                content:'✖ (Invalid)';
+                color: red;
+                padding-left: 5px;
+            }
+            input:valid + span::after{
+                content:'✓ (valid)';
+                color:lightgreen;
+                padding-left: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" onkeypress="return onlynum(event)" required>
+            <span class="validity"></span><br>
+
+            <label for="duration">Duration (years):</label>
+            <input type="text" id="duration" name="duration" pattern="[0-9]{1}|[0-9]{2}" onkeypress="return onlynum(event)" required>
+            <span class="validity"></span><br>
+
+            <label for="rate">Intrest Rate (%):</label>
+            <input type="text" id="rate" name="rate" pattern="[0-9]{1}|[0-9]{2}|[0-9]{3}" onkeypress="return onlynum(event)" required>
+            <span class="validity"></span><br>
+
+            <button id="submit" type="button" onclick=main()>Submit</button>
+    </form>
+    <p id="result">
+    </p>
+        <script>
+            function onlynum(event){
+                var ASCIICode = (event.which) ? event.which : event.keycode;
+                if(ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+                    return false;
+                }
+                return true;
+            }
+            var m={
+                amount:0, duration:1, rate:2, monthlyPayment:0, totalAmount:0
+            };
+
+            function GetInput(){
+                m.amount=document.getElementById("amount").value;
+                m.duration= document.getElementById("duration").value;
+                m.rate=document.getElementById("rate").value;
+                m.rate=m.rate/1200;
+                m.duration = m.duration*12;
+            }
+            
+
+            function GetMonthlyPayment(){
+                
+                //m.monthlyPayment= m.amount*(m.rate*Math.pow((1 + m.apr),m.duration))/(Math.pow((1 + m.rate),m.duration)-1);
+                m.monthlyPayment=(m.amount * m.rate) / (1 - (Math.pow((1 + m.rate) , m.duration * -1)));
+                //console.log(m.amount);
+                return m.monthlyPayment;
+            }
+            //(principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+            function GetTotalAmount(){
+                m.totalAmount=m.monthlyPayment*m.duration; 
+                return m.totalAmount;
+            }
+            function DisplayResult(){
+                //document.write("<p>"+"Monthly: $"+GetMonthlyPayment().toFixed(2)+"<br>Total Amount: $" + GetTotalAmount().toFixed(2)+"</p>");
+                document.getElementById("result").innerHTML = "Monthly Payment: $"+GetMonthlyPayment().toFixed(2) + "<br>Total Amount: $"+GetTotalAmount().toFixed(2);
+            }
+            function main(){
+                GetInput();
+                GetMonthlyPayment();
+                GetTotalAmount();
+                DisplayResult();
+            }
+            
+        </script>
+    </body>
+</html>

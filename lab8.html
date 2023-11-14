@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lab-8</title>
+        <style>
+        
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <h2>Car Database</h2>
+        <!--input type="button" value="ok" onclick="loadchars()"/-->
+        <div class="data">
+            <label for="make">Make:</label>
+            <input type="text" id="make"><br>
+            <label for="model">Model:</label>
+            <input type="text" id="model"><br>
+            <label for="year">Year:</label>
+            <input type="text" id="year"><br>
+            <label type="body">Body Style:</label>
+            <select name="body" id="body">
+                <option value="sedan">Sedan</option>
+                <option value="coupe">Coupe</option>
+                <option value="sport">Sport Car</option>
+                <option value="hatch">Hatchback</option>
+                <option value="convertible">Convertible</option>
+                <option value="SUV">SUV</option>
+                <option value="minivan">Minivan</option>
+                <option value="truck">Truck</option>
+            </select><br>
+            <label for="transmission">Transmission:</label><br>
+            <input type="checkbox" id="manual" value="manual">
+            <label for="manual">Manual</label><br>
+            <input type="checkbox" id="auto" value="auto">
+            <label for="auto">Automatic</label><br>
+            
+            <p><label for="type">Type:</label><br></p>
+            <input type="radio" id="awd" value="awd" name = "type">
+            <label for="awd">AWD</label><br>
+            <input type="radio" id="fwd" value="fwd" name = "type">
+            <label for="fwd">FWD</label><br>
+            <input type="radio" id="rwd" value="rwd" name = "type">
+            <label for="rwd">RWD</label><br>
+
+            <input type="button" id="insert" value="Insert" onclick="insert()">
+
+            <input type="button" id="delete" value="Delete" onclick="delete1()">
+
+            <input type="button" id="edit" value="Edit" onclick="edit()">
+
+
+            
+            <!--img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200" width="300px" height="150px"-->
+
+        </div>
+        <div>
+            <br><hr>
+            <input type="button" id="top" value="Top" onclick="top1()">
+            <input type="button" id="previous" value="Previous" onclick="previous()">
+            <input type="button" id="next" Value="Next" onclick="next()">
+            <input type="button" id="bottom" value="Bottom" onclick="bottom()"><br>
+        </div>
+        <hr>
+        <div id="cardata">
+            <p id="currentMake"></p>
+            <p id="currentModel"></p>
+            <p id="currentYear"></p>
+            <p id="currentColor"></p>
+            <p id="currentBodyStyle"></p>
+            <p id="currentTransmission"></p>
+            <p id="currentType"></p>
+            <img id="photo" style="width:50%; height:50%">
+        </div>
+        <hr>
+        <footer>
+            Name<br>
+            Major: Computer Science<br>
+            <address class="add">
+                123 Main ST, <br> 
+                City, CA 00000 USA<br>
+                559-123-4567<br>
+                <a href="mailto:email@gmail.com">email@gmail.com</a>
+            </address>
+            Date created:
+            <time datetime="2022-10-20T10:00"> October 20th, 2022 at 10:00AM</time><br>
+            &copy; Copyright 2022
+        </footer>
+        <script type="text/javascript" src="databrowser.js"></script>
+    </body>
+</html>
